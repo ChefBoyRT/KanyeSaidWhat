@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.css'
+import Card from './components/Card'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  state = {
+    currentQuote: ''
+  }
+
+  handleClick = () => {
+    fetch('https://api.kanye.rest')
+      .then(response => response.json())
+      .then(result => this.setState({
+        currentQuote: result.quote
+      }))
+  }
+
+  createCard = () => {
+    return <Card quote={this.state.currentQuote} />
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <div className='container'>
+          <h1>Kanye said what???</h1>
+          <button className='get-quote-button' onClick={this.handleClick}>He said...</button>
+          {this.createCard()}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
