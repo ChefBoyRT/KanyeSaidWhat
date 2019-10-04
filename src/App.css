@@ -11,9 +11,10 @@
     height: 100vh;
 }
 
-h1 {
+.title {
     font-size: 6em;
     background-color: rgba(255, 255, 255, 0);
+    margin-top: 1rem;
 }
 
 .get-quote-button {
