@@ -2,7 +2,7 @@
 > A react app that randomly generates an original Kanye West quote!
 
 <p align="center">
-  <img width="600" height="400" src="https://media.giphy.com/media/l0L8N0nfPSaaLmBPbL/giphy.gif">
+  <img width="650" height="400" src="https://media.giphy.com/media/l0L8N0nfPSaaLmBPbL/giphy.gif">
 </p>
 
 ## Table of contents
